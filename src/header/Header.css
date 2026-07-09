@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #120b08;
+  color: #fff;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(
+    circle at top,
+    #5a381e 0%,
+    #2a1c16 45%,
+    #120b08 100%
+  );
+}
+
+/* Navigation */
+
+nav {
+  width: 100%;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.logo {
+  font-size: 38px;
+  font-family: "Cinzel", serif;
+  color: #e1b46a;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(225, 180, 106, 0.5);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #e1b46a;
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 90px);
+  padding: 0 8%;
+}
+
+.left {
+  max-width: 600px;
+}
+
+.left h1 {
+  font-size: 72px;
+  margin-bottom: 20px;
+  font-family: "Cinzel", serif;
+  color: #e1b46a;
+  line-height: 1.1;
+  text-shadow:
+    0 0 15px rgba(225, 180, 106, 0.6),
+    0 0 35px rgba(225, 180, 106, 0.4);
+}
+
+.left p {
+  font-size: 20px;
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+/* Buttons */
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 16px 35px;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: 0.35s;
+}
+
+.gold {
+  background: linear-gradient(135deg, #e1b46a, #b87a3a);
+  color: #2a1c16;
+}
+
+.gold:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(225, 180, 106, 0.45);
+}
+
+.outline {
+  border: 2px solid #e1b46a;
+  color: #e1b46a;
+}
+
+.outline:hover {
+  background: #e1b46a;
+  color: #2a1c16;
+}
+
+/* Vinyl */
+
+.right {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e1b46a, #8b5a2b);
+  animation: spin 18s linear infinite;
+  box-shadow:
+    0 0 50px rgba(225, 180, 106, 0.4),
+    inset 0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.circle::before {
+  content: "";
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: #2a1c16;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.music {
+  position: absolute;
+  font-size: 110px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating Notes */
+
+.note {
+  position: absolute;
+  color: #e1b46a;
+  opacity: 0.35;
+  animation: float 10s linear infinite;
+}
+
+.note:nth-child(1) {
+  top: 20%;
+  left: 8%;
+  font-size: 35px;
+}
+
+.note:nth-child(2) {
+  top: 18%;
+  right: 10%;
+  font-size: 45px;
+  animation-delay: 2s;
+}
+
+.note:nth-child(3) {
+  bottom: 18%;
+  left: 15%;
+  font-size: 55px;
+  animation-delay: 4s;
+}
+
+.note:nth-child(4) {
+  bottom: 20%;
+  right: 12%;
+  font-size: 40px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.4;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+}
+
+/* Wave */
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.wave svg {
+  display: block;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .left h1 {
+    font-size: 50px;
+  }
+
+  .right {
+    width: 300px;
+    height: 300px;
+  }
+
+  .circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .circle::before {
+    width: 170px;
+    height: 170px;
+  }
+
+  .music {
+    font-size: 80px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
